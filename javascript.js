@@ -18,7 +18,7 @@ console.log("Computer: " + computerSelection);
 console.log("Player: " + playerSelection);
 
 // function that check the answer and decides the winner
-function getPlayerChoice() {
+function checkPlayerInput() {
   if (playerSelection !== "ROCK" && playerSelection !== "PAPER" && playerSelection !== "SCISSORS") { // checks if the input is correct
 		alert("Please input a relatable answer"); // alerts the user of the wrong input
 	} else {
@@ -57,4 +57,4 @@ function playRound(playerSelection, computerSelection){
 			console.log("Round Draw!")
 	}
 } 
-getPlayerChoice();
+checkPlayerInput();

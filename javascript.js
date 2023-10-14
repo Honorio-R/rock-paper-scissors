@@ -19,41 +19,40 @@ console.log("Player: " + playerSelection);
 
 // function that check the answer and decides the winner
 function getPlayerChoice() {
-  let inputCheck = playerSelection;
-  if (inputCheck !== "ROCK" && inputCheck !== "PAPER" && inputCheck !== "SCISSORS") { // checks if the input is correct
+  if (playerSelection !== "ROCK" && playerSelection !== "PAPER" && playerSelection !== "SCISSORS") { // checks if the input is correct
 		alert("Please input a relatable answer"); // alerts the user of the wrong input
 	} else {
-		getResult(inputCheck); // proceeds to another function that compares both the computer and player's answer
+		playRound(playerSelection, computerSelection); // proceeds to another function that compares both the computer and player's answer
 	}
 }
 
 // start comparing the different variations of both computer and player's answer to show the winner
-function getResult(inputCheck){
-	if (inputCheck == "ROCK" && computerSelection == "ROCK"){ // When player input ROCK
+function playRound(playerSelection, computerSelection){
+	if (playerSelection == "ROCK" && computerSelection == "ROCK"){ // When player input ROCK
 			console.log("Computer has the same answer")
 			console.log("Round Draw!")
-	} else if (inputCheck == "ROCK" && computerSelection == "PAPER"){
+	} else if (playerSelection == "ROCK" && computerSelection == "PAPER"){
 			console.log("PAPER beats ROCK")
 			console.log("you lose!!")
-	} else if (inputCheck == "ROCK" && computerSelection == "SCISSORS"){
-			console.log("ROCKs beats PAPER")
+	} else if (playerSelection == "ROCK" && computerSelection == "SCISSORS"){
+			console.log("ROCK beats PAPER")
 			console.log("you won!!")
-	} else if (inputCheck == "PAPER" && computerSelection == "ROCK"){ // When player input PAPER
+	} else if (playerSelection == "PAPER" && computerSelection == "ROCK"){ // When player input PAPER
 			console.log("PAPER beats ROCK")
 			console.log("you won!!")
-	} else if (inputCheck == "PAPER" && computerSelection == "PAPER"){
+	} else if (playerSelection == "PAPER" && computerSelection == "PAPER"){
 			console.log("Computer has the same answer")
 			console.log("Round Draw!")
-	} else if (inputCheck == "PAPER" && computerSelection == "SCISSORS"){
+	} else if (playerSelection == "PAPER" && computerSelection == "SCISSORS"){
 			console.log("SCISSORS beats PAPER")
 			console.log("you lose!!")
-	} else if (inputCheck == "SCISSORS" && computerSelection == "ROCK"){ // When player input SCISSORS
+	} else if (playerSelection == "SCISSORS" && computerSelection == "ROCK"){ // When player input SCISSORS
 			console.log("ROCK beats SCISSORS")
 			console.log("you lose!!")
-	} else if (inputCheck == "SCISSORS" && computerSelection == "PAPER"){
+	} else if (playerSelection == "SCISSORS" && computerSelection == "PAPER"){
 			console.log("SCISSORS beats PAPER")
 			console.log("you won!!")
-	} else if (inputCheck == "SCISSORS" && computerSelection == "SCISSORS"){
+	} else if (playerSelection == "SCISSORS" && computerSelection == "SCISSORS"){
 			console.log("Computer has the same answer")
 			console.log("Round Draw!")
 	}

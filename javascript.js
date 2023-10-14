@@ -1,3 +1,6 @@
+const computerChoices = ["rock", "paper", "scissors"];
+
+//function the creates the computers choice
 function getComputerChoice(computerChoice){
 	// Generate a random index based on the arrays length
 	const randomIndex = Math.floor(Math.random() * computerChoice.length);
@@ -7,6 +10,8 @@ console.log(randomIndex);
 }
 
 // Example usage:
-const computerChoices = ["rock", "paper", "scissors"];
-const computerAnswer = getComputerChoice(computerChoices);
-console.log("Computer: " + computerAnswer);
+const computerSelection = getComputerChoice(computerChoices);
+console.log("Computer: " + computerSelection);
+
+//function that creates the users choice
+

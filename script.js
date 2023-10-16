@@ -14,15 +14,16 @@ function game() {
         return playerSelection;
     }
 
-    // computer and player move
-    const computerSelection = computerMove();
-    console.log("Computer's choice: " + computerSelection);
-
+    // Get player's input
     const playerSelection = getPlayerInput();
-    console.log("Player's choice: " + playerSelection);
 
-    // Determine the winner
-    if (playerSelection && computerSelection) {
+    if (playerSelection) {
+        console.log("Player's choice: " + playerSelection);
+
+        const computerSelection = computerMove();
+        console.log("Computer's choice: " + computerSelection);
+
+        // Determine the winner
         if (playerSelection === computerSelection) {
             console.log("It's a tie!");
         } else if (

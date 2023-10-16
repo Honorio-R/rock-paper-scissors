@@ -9,10 +9,12 @@ function game() {
     }
 
     function getPlayerInput() {
-        return prompt("What's your move?"); // Capture the player's input
+        let playerInput = prompt("What's your move?"); // Capture the player's input
+        let playerSelection = playerInput ? playerInput.toUpperCase() : null;
+        return playerSelection;
     }
 
-    // Game flow
+    // computer and player move
     const computerSelection = computerMove();
     console.log("Computer's choice: " + computerSelection);
 
@@ -21,7 +23,7 @@ function game() {
 
     // Determine the winner
     if (playerSelection && computerSelection) {
-        if (playerSelection.toUpperCase() === computerSelection) {
+        if (playerSelection === computerSelection) {
             console.log("It's a tie!");
         } else if (
             (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
@@ -40,5 +42,18 @@ function game() {
     console.log("Computer Score: " + computerScore);
 }
 
+// turns the game into a best of 5
+function gameSeries() {
+    while (playerScore < 3 && computerScore < 3) {
+        game();
+    }
+    
+    if (playerScore >= 3) {
+        console.log("Player wins the series!");
+    } else {
+        console.log("Computer wins the series!");
+    }
+}
+
 // Run the game
-game();
+gameSeries();

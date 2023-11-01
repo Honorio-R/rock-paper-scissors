@@ -1,21 +1,23 @@
+
 let playerScore = 0; // stores the player scores
 let computerScore = 0; // stores the computer score
+let getPlayerInput = ""; // public storage for functions to access
 
-function game() {
+function game(getPlayerInput) {
     function computerMove() {
         const computerChoices = ["ROCK", "PAPER", "SCISSORS"];
         const randomIndex = Math.floor(Math.random() * computerChoices.length);
         return computerChoices[randomIndex];
     }
 
-    function getPlayerInput() {
-        let playerInput = prompt("What's your move?"); // Capture the player's input
-        let playerSelection = playerInput ? playerInput.toUpperCase() : null;
-        return playerSelection;
-    }
+    // function getPlayerInput() {
+    //     let playerInput = prompt("What's your move?"); // Capture the player's input
+    //     let playerSelection = playerInput ? playerInput.toUpperCase() : null;
+    //     return playerSelection;
+    // }
 
     // Get player's input
-    const playerSelection = getPlayerInput();
+    const playerSelection = getPlayerInput;
 
     if (playerSelection) {
         console.log("Player's choice: " + playerSelection);
@@ -56,5 +58,36 @@ function gameSeries() {
     }
 }
 
+// Button functions
+const rBtn = document.querySelector("#rockBtn");
+
+// set the player move to rock and calls the game function
+rBtn.addEventListener('click', () => {
+    let getPlayerInput = "ROCK";
+    console.log(getPlayerInput);
+    game(getPlayerInput);
+});
+
+// Button functions
+const pBtn = document.querySelector("#paperBtn");
+
+// set the player move to paper and calls the game function
+pBtn.addEventListener('click', () => {
+    let getPlayerInput = "PAPER";
+    console.log(getPlayerInput);
+    game(getPlayerInput);
+});
+
+// Button functions
+const sBtn = document.querySelector("#scissorsBtn");
+
+// set the player move to scissors and calls the game function
+sBtn.addEventListener('click', () => {
+    let getPlayerInput = "SCISSORS";
+    console.log(getPlayerInput);
+    game(getPlayerInput);
+});
+
+
 // Run the game
-gameSeries();
+//gameSeries();

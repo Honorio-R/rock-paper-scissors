@@ -3,12 +3,43 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 		<script src="script.js" defer></script>
 		<title>Document</title>
 	</head>
 	<body>
-		<button id="rockBtn">ROCK</button>
-		<button id="paperBtn">PAPER</button>
-		<button id="scissorsBtn">SCISSORS</button>
+		<div id="header">
+			HEAD
+			<button id="resetBtn"><i class="fa-solid fa-arrow-rotate-right"></i></button>
+		</div>
+		<div class="body-container">
+			<div class="game-screen">
+				<div class="player-side">
+					<div class="player-score">
+						0
+					</div>
+					<div class="player-display">
+						asda
+					</div>
+				</div>
+				<div class="computer-side">
+					<div class="computer-score">
+						0
+					</div>
+					<div class="computer-display">
+						adsdasdd
+					</div>
+				</div>
+			</div>
+			<div class="player-moves">
+				<button id="rockBtn">ROCK</button>
+				<button id="paperBtn">PAPER</button>
+				<button id="scissorsBtn">SCISSORS</button>
+			</div>
+		</div>
+		<div id="footer">
+			FOOTER
+		</div>
 	</body>
 </html>

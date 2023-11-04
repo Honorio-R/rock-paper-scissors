@@ -43,18 +43,21 @@ function game(getPlayerInput) {
 
     console.log("Player Score: " + playerScore);
     console.log("Computer Score: " + computerScore);
+    gameSeries();
 }
 
 // turns the game into a best of 5
 function gameSeries() {
-    while (playerScore < 3 && computerScore < 3) {
-        game();
-    }
-    
     if (playerScore >= 3) {
         console.log("Player wins the series!");
-    } else {
+        playerScore = 0;
+        computerScore = 0;
+    } else if (computerScore >= 3){
         console.log("Computer wins the series!");
+        playerScore = 0;
+        computerScore = 0;
+    } else{
+        console.log("Please Select a Move");
     }
 }
 
@@ -64,7 +67,6 @@ const rBtn = document.querySelector("#rockBtn");
 // set the player move to rock and calls the game function
 rBtn.addEventListener('click', () => {
     let getPlayerInput = "ROCK";
-    console.log(getPlayerInput);
     game(getPlayerInput);
 });
 
@@ -74,7 +76,6 @@ const pBtn = document.querySelector("#paperBtn");
 // set the player move to paper and calls the game function
 pBtn.addEventListener('click', () => {
     let getPlayerInput = "PAPER";
-    console.log(getPlayerInput);
     game(getPlayerInput);
 });
 
@@ -84,10 +85,5 @@ const sBtn = document.querySelector("#scissorsBtn");
 // set the player move to scissors and calls the game function
 sBtn.addEventListener('click', () => {
     let getPlayerInput = "SCISSORS";
-    console.log(getPlayerInput);
     game(getPlayerInput);
 });
-
-
-// Run the game
-//gameSeries();

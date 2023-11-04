@@ -1,0 +1,133 @@
+*{
+    font-family: DOS, Courier, "Courier New", monospace;
+    color: #271d6b;
+    font-weight: 550;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#header{
+    background-color: rgb(228, 219, 238);
+    padding: 10px 20px;
+	display: flex;
+    justify-content: space-between;
+}
+
+#footer{
+    font-size: small;
+    font-weight: bolder;
+    background-color: rgb(228, 219, 238);
+    padding: 10px 0;
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 5px 10px;
+}
+
+.body-container{
+    background: linear-gradient(to right, #623fff, #7542f5, #8742f5);
+    display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1;
+}
+
+.game-screen{
+    height: 500px;
+    width: 1000px;
+    min-width: 800px;
+    background-color: #ffffff;
+    border: solid 5px #a0a0a0;
+    border-radius: 20px;
+    display: flex;
+}
+
+.player-side{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    flex: 1;
+    align-items: flex-start;
+}
+
+.computer-side{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    flex: 1;
+    align-items: flex-end;
+}
+
+.player-score{
+    width: 10px;
+    background-color: rgb(228, 219, 238);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.computer-score{
+    width: 10px;
+    background-color: rgb(228, 219, 238);
+    padding: 10px 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.player-display{
+    display: flex;
+	flex: 1;
+}
+
+.computer-display{
+    display: flex;
+	flex: 1;
+}
+
+
+.player-moves{
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    height: 100px;
+    width: 200px;
+    margin: 50px;
+    border-radius: 20px;
+}
+
+#resetBtn{
+    height: 30px;
+    width: 30px;
+    margin: 0;
+}
+
+#rockBtn{
+    background-color: #26d026;
+}
+
+#paperBtn{
+    background-color: #cc5500;
+}
+
+#scissorsBtn{
+    background-color: #ffff00;
+}
+
+
+
+
+

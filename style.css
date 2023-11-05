@@ -3,12 +3,17 @@
     color: #271d6b;
     font-weight: 550;
 }
+
 body{
     height: 100vh;
     margin: 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
+}
+
+a{
+	text-decoration: none;
 }
 
 #header{
@@ -66,7 +71,7 @@ body{
     align-items: flex-end;
 }
 
-.player-score{
+#player-score{
     width: 10px;
     background-color: rgb(228, 219, 238);
     padding: 10px 20px;
@@ -75,7 +80,7 @@ body{
     justify-content: center;
 }
 
-.computer-score{
+#computer-score{
     width: 10px;
     background-color: rgb(228, 219, 238);
     padding: 10px 20px;

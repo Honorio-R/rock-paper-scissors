@@ -1,4 +1,8 @@
+// UI variables
+const UIpScore = document.querySelector('#player-score');
+const UIcScore = document.querySelector('#computer-score');
 
+// Game global variables
 let playerScore = 0; // stores the player scores
 let computerScore = 0; // stores the computer score
 let getPlayerInput = ""; // public storage for functions to access
@@ -35,25 +39,27 @@ function game(getPlayerInput) {
         ) {
             console.log("Player wins!");
             playerScore++;
+            UIpScore.textContent = playerScore;
         } else {
             console.log("Computer wins!");
             computerScore++;
+            UIcScore.textContent = computerScore;
         }
     }
 
     console.log("Player Score: " + playerScore);
-    console.log("Computer Score: " + computerScore);
+    console.log("Computer Score: " + computerScore);   
     gameSeries();
 }
 
 // turns the game into a best of 5
 function gameSeries() {
     if (playerScore >= 3) {
-        console.log("Player wins the series!");
+        alert("Player wins the series!");
         playerScore = 0;
         computerScore = 0;
     } else if (computerScore >= 3){
-        console.log("Computer wins the series!");
+        alert("Computer wins the series!");
         playerScore = 0;
         computerScore = 0;
     } else{
@@ -61,8 +67,10 @@ function gameSeries() {
     }
 }
 
-// Button functions
+// player moves button varbiables
 const rBtn = document.querySelector("#rockBtn");
+const pBtn = document.querySelector("#paperBtn");
+const sBtn = document.querySelector("#scissorsBtn");
 
 // set the player move to rock and calls the game function
 rBtn.addEventListener('click', () => {
@@ -70,17 +78,11 @@ rBtn.addEventListener('click', () => {
     game(getPlayerInput);
 });
 
-// Button functions
-const pBtn = document.querySelector("#paperBtn");
-
 // set the player move to paper and calls the game function
 pBtn.addEventListener('click', () => {
     let getPlayerInput = "PAPER";
     game(getPlayerInput);
 });
-
-// Button functions
-const sBtn = document.querySelector("#scissorsBtn");
 
 // set the player move to scissors and calls the game function
 sBtn.addEventListener('click', () => {

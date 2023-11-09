@@ -1,6 +1,12 @@
 // UI variables
 const UIpScore = document.querySelector('#player-score');
 const UIcScore = document.querySelector('#computer-score');
+const playerDisplay = document.querySelector('#player-display');
+const computerDisplay = document.querySelector('#computer-display');
+// player moves button varbiables
+const rBtn = document.querySelector("#rockBtn");
+const pBtn = document.querySelector("#paperBtn");
+const sBtn = document.querySelector("#scissorsBtn");
 
 // Game global variables
 let playerScore = 0; // stores the player scores
@@ -14,12 +20,6 @@ function game(getPlayerInput) {
         return computerChoices[randomIndex];
     }
 
-    // function getPlayerInput() {
-    //     let playerInput = prompt("What's your move?"); // Capture the player's input
-    //     let playerSelection = playerInput ? playerInput.toUpperCase() : null;
-    //     return playerSelection;
-    // }
-
     // Get player's input
     const playerSelection = getPlayerInput;
 
@@ -31,61 +31,80 @@ function game(getPlayerInput) {
 
         // Determine the winner
         if (playerSelection === computerSelection) {
+            computerUpdate(computerSelection);
             console.log("It's a tie!");
         } else if (
             (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
             (playerSelection === "PAPER" && computerSelection === "ROCK") ||
             (playerSelection === "SCISSORS" && computerSelection === "PAPER")
         ) {
+            computerUpdate(computerSelection);
             console.log("Player wins!");
             playerScore++;
-            UIpScore.textContent = playerScore;
+            UpdateScore();
         } else {
+            computerUpdate(computerSelection);
             console.log("Computer wins!");
-            computerScore++;
-            UIcScore.textContent = computerScore;
+            computerScore++;   
+            UpdateScore();      
         }
     }
-
     console.log("Player Score: " + playerScore);
     console.log("Computer Score: " + computerScore);   
     gameSeries();
 }
 
+// Change computer dislay UI
+function computerUpdate(computerSelection){
+    if(computerSelection === "ROCK"){
+        computerDisplay.textContent = '🪨️';
+    } else if (computerSelection === "PAPER") {
+        computerDisplay.textContent = '📜️';
+    } else{
+        computerDisplay.textContent = '✂️';
+    }
+}
+
+// Updates the UI score
+function UpdateScore(){
+    UIcScore.textContent = computerScore;
+    UIpScore.textContent = playerScore;
+}
+
 // turns the game into a best of 5
 function gameSeries() {
     if (playerScore >= 3) {
-        alert("Player wins the series!");
+        //alert("Player wins the series!");
         playerScore = 0;
         computerScore = 0;
+        UpdateScore();
     } else if (computerScore >= 3){
-        alert("Computer wins the series!");
+        //alert("Computer wins the series!");
         playerScore = 0;
         computerScore = 0;
+        UpdateScore();
     } else{
         console.log("Please Select a Move");
     }
 }
 
-// player moves button varbiables
-const rBtn = document.querySelector("#rockBtn");
-const pBtn = document.querySelector("#paperBtn");
-const sBtn = document.querySelector("#scissorsBtn");
-
 // set the player move to rock and calls the game function
 rBtn.addEventListener('click', () => {
     let getPlayerInput = "ROCK";
+    playerDisplay.textContent = '🪨️';
     game(getPlayerInput);
 });
 
 // set the player move to paper and calls the game function
 pBtn.addEventListener('click', () => {
     let getPlayerInput = "PAPER";
+    playerDisplay.textContent = '📜️';
     game(getPlayerInput);
 });
 
 // set the player move to scissors and calls the game function
 sBtn.addEventListener('click', () => {
     let getPlayerInput = "SCISSORS";
+    playerDisplay.textContent = '✂️';
     game(getPlayerInput);
 });

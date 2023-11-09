@@ -35,7 +35,7 @@ a{
 }
 
 .body-container{
-    background: linear-gradient(to right, #623fff, #7542f5, #8742f5);
+    background: linear-gradient(to right, #552ffd, #602be9, #8039f3);
     display: flex;
     flex-direction: column;
 	justify-content: center;
@@ -51,6 +51,7 @@ a{
     border: solid 5px #a0a0a0;
     border-radius: 20px;
     display: flex;
+    justify-content: space-evenly;
 }
 
 .player-side{
@@ -89,14 +90,22 @@ a{
     justify-content: center;
 }
 
-.player-display{
+#player-display{
+    font-size: 300px;
+    width: 100%;
     display: flex;
-	flex: 1;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
-.computer-display{
+#computer-display{
+    font-size: 300px;
+    width: 100%;
     display: flex;
-	flex: 1;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 

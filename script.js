@@ -3,10 +3,13 @@ const UIpScore = document.querySelector('#player-score');
 const UIcScore = document.querySelector('#computer-score');
 const playerDisplay = document.querySelector('#player-display');
 const computerDisplay = document.querySelector('#computer-display');
+const gameAnnouncement = document.querySelector('#game-announcement');
+
 // player moves button varbiables
-const rBtn = document.querySelector("#rockBtn");
-const pBtn = document.querySelector("#paperBtn");
-const sBtn = document.querySelector("#scissorsBtn");
+const rBtn = document.querySelector('#rockBtn');
+const pBtn = document.querySelector('#paperBtn');
+const sBtn = document.querySelector('#scissorsBtn');
+const rstBtn = document.querySelector('#resetBtn');
 
 // Game global variables
 let playerScore = 0; // stores the player scores
@@ -32,19 +35,19 @@ function game(getPlayerInput) {
         // Determine the winner
         if (playerSelection === computerSelection) {
             computerUpdate(computerSelection);
-            console.log("It's a tie!");
+            gameAnnouncement.textContent = "IT'S A TIE!";
         } else if (
             (playerSelection === "ROCK" && computerSelection === "SCISSORS") ||
             (playerSelection === "PAPER" && computerSelection === "ROCK") ||
             (playerSelection === "SCISSORS" && computerSelection === "PAPER")
         ) {
             computerUpdate(computerSelection);
-            console.log("Player wins!");
+            gameAnnouncement.textContent = playerSelection + " BEATS " + computerSelection;
             playerScore++;
             UpdateScore();
         } else {
             computerUpdate(computerSelection);
-            console.log("Computer wins!");
+            gameAnnouncement.textContent = computerSelection + " BEATS " + playerSelection;
             computerScore++;   
             UpdateScore();      
         }
@@ -87,6 +90,14 @@ function gameSeries() {
         console.log("Please Select a Move");
     }
 }
+// reset the game
+rstBtn.addEventListener('click', () => {
+    playerScore = 0;
+    computerScore = 0;
+    computerDisplay.textContent = '❔';
+    playerDisplay.textContent = '❔';
+    UpdateScore();
+});
 
 // set the player move to rock and calls the game function
 rBtn.addEventListener('click', () => {

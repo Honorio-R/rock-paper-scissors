@@ -1,3 +1,4 @@
+/* Universal style */
 *{
     font-family: DOS, Courier, "Courier New", monospace;
     color: #271d6b;
@@ -16,13 +17,37 @@ a{
 	text-decoration: none;
 }
 
+/* Header */
+.header-logo{
+    padding: 5px 20px;
+}
+
+.fa-regular{
+    font-size: 23px;
+    border: solid 1px;
+    border-radius: 50%;
+    padding: 5px
+}
+
+.fa-hand-back-fist{
+    background-color: #F2E34C;
+}
+
+.fa-hand{
+    background-color: #56DDD2;
+}
+
+.fa-hand-scissors{
+    background-color: #f3c6f2;
+}
+
 #header{
     background-color: rgb(228, 219, 238);
-    padding: 10px 20px;
 	display: flex;
     justify-content: space-between;
 }
 
+/* FOOTER */
 #footer{
     font-size: small;
     font-weight: bolder;
@@ -34,6 +59,7 @@ a{
 	padding: 5px 10px;
 }
 
+/* BODY */
 .body-container{
     background: linear-gradient(to right, #552ffd, #602be9, #8039f3);
     display: flex;
@@ -43,6 +69,20 @@ a{
 	flex: 1;
 }
 
+/* ANNOUNCEMENT SCREEN */
+#game-announcement{
+    height: 70px;
+    width: 950px;
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    padding: 10px;
+    border: solid 3px #a0a0a0;
+    border-radius: 20px;
+    font-size: 65px;
+    text-align: center;
+}
+
+/* GAME SCREEN */
 .game-screen{
     height: 500px;
     width: 1000px;
@@ -108,7 +148,7 @@ a{
     align-items: center;
 }
 
-
+/* Player buttons */
 .player-moves{
     height: 200px;
     display: flex;
@@ -126,7 +166,7 @@ button{
 #resetBtn{
     height: 30px;
     width: 30px;
-    margin: 0;
+    margin: 10px 20px 10px 0px;
 }
 
 #rockBtn{

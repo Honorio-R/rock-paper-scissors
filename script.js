@@ -77,12 +77,10 @@ function UpdateScore(){
 // turns the game into a best of 5
 function gameSeries() {
     if (playerScore >= 3) {
-        //alert("Player wins the series!");
         playerScore = 0;
         computerScore = 0;
         UpdateScore();
     } else if (computerScore >= 3){
-        //alert("Computer wins the series!");
         playerScore = 0;
         computerScore = 0;
         UpdateScore();
@@ -96,6 +94,7 @@ rstBtn.addEventListener('click', () => {
     computerScore = 0;
     computerDisplay.textContent = '❔';
     playerDisplay.textContent = '❔';
+    gameAnnouncement.textContent = 'Please Select a Move';
     UpdateScore();
 });
 

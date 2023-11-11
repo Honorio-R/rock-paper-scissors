@@ -60,7 +60,7 @@ function game(getPlayerInput) {
 // Change computer dislay UI
 function computerUpdate(computerSelection){
     if(computerSelection === "ROCK"){
-        computerDisplay.textContent = '🪨️';
+        computerDisplay.textContent = '⛰️';
     } else if (computerSelection === "PAPER") {
         computerDisplay.textContent = '📜️';
     } else{
@@ -102,7 +102,7 @@ rstBtn.addEventListener('click', () => {
 // set the player move to rock and calls the game function
 rBtn.addEventListener('click', () => {
     let getPlayerInput = "ROCK";
-    playerDisplay.textContent = '🪨️';
+    playerDisplay.textContent = '⛰️';
     game(getPlayerInput);
 });
 
